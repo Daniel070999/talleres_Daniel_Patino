@@ -1,0 +1,42 @@
+body {
+    background-color: seashell;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: brown;
+    font-size: 22px;
+}
+
+#contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#contenedor div {
+    width: 220px;
+    border: 2px solid brown;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    text-align: center;
+}
+
+#contenedor div:hover {
+    transform: scale(1.05);
+}
+
+#contenedor h1 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+#contenedor img {
+    max-width: 100%;
+    height: auto;
+}
