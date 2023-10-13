@@ -22,7 +22,6 @@ async function obtener_personaje(id) {
 }
 
 async function obtener_personajes() {
-  console.log('asd');
   for (let i = 1; i <= 80; i++) {
     await obtener_personaje(i);
   }
