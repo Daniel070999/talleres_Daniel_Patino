@@ -4,14 +4,16 @@ function get_representantelegal(filtrorepresentantelegal) {
     return new Promise((resolve, reject) => {
         let filtro = {}
         if (filtrorepresentantelegal) {
-            filtro = { nombre: filtrorepresentantelegal }
+            filtro = { _id: filtrorepresentantelegal }
         }
         model.find(filtro)
             .populate('empresa')
             .then(data => {
                 console.log(data);
+
                 lista = []
                 for (elemento of data) {
+                    console.log(elemento);
                     lista.push({ id: elemento._id, representantelegal: elemento.nombre, empresa: elemento.empresa[0].nombre })
                 }
                 resolve(lista)
