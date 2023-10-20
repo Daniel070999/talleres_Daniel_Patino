@@ -6,7 +6,8 @@ let app = express()
 
 app.use('/graphql', graphqlHTTP({
     schema: schema,
-    rootValue: root,
+    rootValue: root.rootMongoDB,
+    //rootValue: root.rootLocal, //en caso que se quiera trabajar en local
     graphiql: true
 }))
 

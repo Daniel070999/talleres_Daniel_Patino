@@ -1,11 +1,11 @@
 const ClienteModel = require('./db');
 
-/*  GraphQl local
+/*  GraphQl local*/
 let clientes = []
 let counter = 1
 
- 
-let root = {
+
+let rootLocal = {
     clientes: () => { return clientes },
     cliente: (data) => {
         for (let i = 0; i < clientes.length; i++) {
@@ -21,9 +21,9 @@ let root = {
         return objeto
     }
 }
-*/
-// Para mongo DB
-let root = {
+
+/* Para mongo DB*/
+let rootMongoDB = {
     clientes: () => {
         return ClienteModel.find();
     },
@@ -37,4 +37,7 @@ let root = {
     },
 };
 
-module.exports = root;
+module.exports = {
+    rootLocal,
+    rootMongoDB
+}
